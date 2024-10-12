@@ -23,26 +23,26 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  // Controllers to capture user input
+  // capture user input
   final _formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
   @override
   void dispose() {
-    // Clean up the controllers when the widget is disposed.
+    // Clean up when the widget is disposed.
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
   }
 
-  // Function to handle login logic
+  // handle login functionality
   void _login() {
     if (_formKey.currentState!.validate()) {
       final username = emailController.text;
       final password = passwordController.text;
 
-      // Simple hardcoded authentication check
+      // Simple hardcoded authentication
       if (username == "user34412@aol.com" && password == "iktfok9r") {
         Navigator.pushReplacement(
           context,
@@ -119,7 +119,7 @@ class _LoginState extends State<Login> {
   }
 }
 
-// The Home Screen to navigate to after successful login
+// Landing page is the home page after successful login
 class Home extends StatelessWidget {
   final String email;
   Home({required this.email});
@@ -132,7 +132,7 @@ class Home extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Welcome to the Home Screen, $email!'), // Welcome message
+            Text('Welcome to the Home Page, $email!'), // Welcome message
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
