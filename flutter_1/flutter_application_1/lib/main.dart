@@ -41,7 +41,7 @@ class _LoginState extends State<Login> {
       final password = passwordController.text;
 
       // Hardcoded authentication for simplicity
-      if (username == "user34412@aol.com" && password == "iktfok9r") {
+      if (username == "user34412@aol.com" && password == " ") {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
